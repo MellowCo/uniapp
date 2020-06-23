@@ -1,10 +1,5 @@
 import request from '@/uilts/request'
-
-export interface PageQuery {
-  limit: number
-  order: string
-  skip: number
-}
+import { PageQuery } from '@/interface/Interface'
 
 export function recommendList(query: PageQuery): Promise<any> {
   return request({
@@ -26,7 +21,7 @@ export function albumList(query: PageQuery): Promise<any> {
 
 export function albumdetail(query: PageQuery, id: string): Promise<any> {
   return request({
-    url: `/image/v1/wallpaper/album/${id}/wallpaper`,
+    url: `image/v1/wallpaper/album/${id}/wallpaper`,
     data: {
       ...query
     }

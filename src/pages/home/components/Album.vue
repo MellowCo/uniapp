@@ -33,7 +33,7 @@ import NoMore from '@/component/NoMore.vue'
   }
 })
 export default class Album extends Vue {
-  page: index.PageQuery = {
+  page = {
     limit: 30,
     order: 'new',
     skip: 0

@@ -59,7 +59,7 @@ import NoMore from '@/component/NoMore.vue'
   }
 })
 export default class Recommend extends Vue {
-  query: index.PageQuery = {
+  query = {
     limit: 30,
     order: 'hot',
     skip: 0

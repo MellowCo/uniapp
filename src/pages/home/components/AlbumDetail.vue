@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { albumdetail } from '@/api/home/index'
+import { albumdetail } from '@/api/home'
 
 @Component
 export default class AlbumDetail extends Vue {
@@ -39,15 +39,12 @@ export default class AlbumDetail extends Vue {
 
   onLoad(options: any) {
     this.id = options.id
+    this.getMessage()
   }
 
   async getMessage() {
     const { res } = await albumdetail(this.page, this.id)
     this.detail = res
-  }
-
-  created() {
-    this.getMessage()
   }
 }
 </script>

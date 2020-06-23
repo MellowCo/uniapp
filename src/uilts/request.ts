@@ -1,4 +1,6 @@
-const request = function(args: any): Promise<any> {
+import { IRequestOption } from '@/interface/Interface'
+
+const request = function(args: IRequestOption): Promise<any> {
   // 加载中
   uni.showLoading({
     title: '加载中'
@@ -9,13 +11,13 @@ const request = function(args: any): Promise<any> {
   return new Promise((resolve, reject) => {
     uni.request({
       ...args,
-      success (res) {
+      success(res) {
         resolve(res.data)
       },
-      fail (err) {
+      fail(err) {
         reject(err)
       },
-      complete () {
+      complete() {
         uni.hideLoading()
       }
     })
